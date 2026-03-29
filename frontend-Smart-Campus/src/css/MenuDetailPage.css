@@ -1,0 +1,87 @@
+.menu-detail-container {
+  padding: 30px;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.menu-detail-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.menu-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.menu-info {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.average-rating {
+  font-weight: bold;
+  color: #ff9800;
+  margin-top: 10px;
+}
+
+.review-section {
+  margin-top: 30px;
+}
+
+.review-form {
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+/* ✅ 별점과 입력창 사이 여백 */
+.review-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* ✅ 리뷰 입력창 스타일 개선 */
+.review-form textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 16px;
+  font-size: 1.1rem;
+  border: 2px solid #888;
+  border-radius: 10px;
+  resize: vertical;
+  line-height: 1.7;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.review-form select {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.review-form button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.review-form button:hover {
+  background-color: #115293;
+}
+
+.review-list-section {
+  margin-top: 20px;
+}
+
+.review-list-section p {
+  color: #888;
+}

@@ -1,0 +1,129 @@
+.restaurant-page-container {
+  padding: 30px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.restaurant-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.restaurant-date-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.date-top-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.restaurant-date-nav button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #003366;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.restaurant-date-nav button:hover {
+  background-color: #003366;
+  color: white;
+}
+
+.restaurant-date-nav button:focus,
+.restaurant-date-nav button:focus-visible {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: #003366;
+}
+
+.restaurant-date-nav button:active {
+  background-color: #001f4d;
+  color: white;
+  outline: none;
+}
+
+.restaurant-date {
+  font-size: 20px;
+  font-weight: bold;
+  color: #003366;
+  text-align: center;
+}
+
+.restaurant-day {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ====== 식당 카드 영역 ====== */
+
+.restaurant-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #003366;
+  text-align: center;
+}
+
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 100px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.restaurant-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-4px);
+}
+
+.restaurant-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.menu-info {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.add-menu-button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-menu-button:hover {
+  background-color: #115293;
+}

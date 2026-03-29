@@ -1,0 +1,49 @@
+/* 전체 페이지 레이아웃 */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* 전체 화면 높이 */
+}
+
+/* 중간 바디 레이아웃: 사이드바 + 콘텐츠 */
+.body-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* 사이드바 - 고정 높이와 배경 */
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  /* body-layout 전체 높이 채움 */
+}
+
+/* 메인 콘텐츠 */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+/* Footer는 아래 고정 */
+footer {
+  height: 60px;
+  background-color: #003366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-image {
+  width: 100%;            /* 가로 화면 전체 */
+    height: 100%;           /* 세로도 꽉 채우기 */
+    object-fit: cover;      /* 비율 무시하고 꽉 채움 (찌그러질 수 있음) */
+    display: block;
+}

@@ -1,0 +1,31 @@
+.userpage-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.userpage-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #1f2937;
+  text-align: center;
+}
+
+.userpage-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+}

@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* 콘텐츠가 부족해도 main이 남은 공간을 채움 */
+}
+
+.main-footer {
+  background-color: #003366; /* header와 동일한 색상 */
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+}

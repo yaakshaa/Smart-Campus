@@ -1,0 +1,94 @@
+.menu-form-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.menu-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.menu-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  position: relative;
+}
+
+.menu-form-row input,
+.menu-form-row select {
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  /* ✅ 반응형 input */
+  min-width: 100px;
+}
+
+.menu-form-row input[type="number"] {
+  width: 100px;
+}
+
+/* ✅ ❌ 삭제 버튼 */
+.menu-form-row button {
+  all: unset;
+  font-size: 20px;
+  color: crimson;
+  cursor: pointer;
+  margin-left: auto;
+  align-self: center;
+  /* ✅ 수직 중앙 정렬 */
+  padding: 4px;
+  line-height: 1;
+}
+
+.menu-form-row button:hover {
+  color: darkred;
+}
+
+.menu-form-labels {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  gap: 8px;
+}
+
+.menu-form-labels div {
+  width: 120px;
+}
+
+.menu-btn-group {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.menu-btn-group button {
+  padding: 8px 16px;
+  margin: 4px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.menu-btn-group button:hover {
+  background-color: #125ca3;
+}
+
+.invisible-button {
+  visibility: hidden;
+  width: 20px;
+  height: 32px;
+  font-size: 20px;
+  padding: 4px;
+}

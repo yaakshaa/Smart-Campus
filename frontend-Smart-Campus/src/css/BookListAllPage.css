@@ -1,0 +1,162 @@
+:root {
+  --primary: #003366;
+  --accent:  #002244;
+}
+
+/* ── 컨테이너 ── */
+.BookListAllPage.container-all {
+  display: flex;
+}
+.BookListAllPage .main-all {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ── 로딩 텍스트 ── */
+.BookListAllPage .loading-all {
+  text-align: center;
+  margin: 100px 0;
+}
+
+/* ── 검색창 ── */
+.BookListAllPage .search-wrap {
+  display: flex;
+  margin: 20px auto 24px;
+  max-width: 700px;
+}
+.BookListAllPage .search-input {
+  flex: 1;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+  box-sizing: border-box;
+}
+.BookListAllPage .search-btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s;
+}
+.BookListAllPage .search-btn:hover {
+  background: var(--accent);
+}
+.BookListAllPage .search-icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* ── 카테고리 ── */
+.BookListAllPage .category-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+.BookListAllPage .category-tab {
+  position: relative;
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color .2s;
+}
+.BookListAllPage .category-tab::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 3px;
+  background: transparent;
+  transition: background .2s;
+}
+.BookListAllPage .category-tab:hover::after,
+.BookListAllPage .category-tab.active::after {
+  background: var(--accent);
+}
+.BookListAllPage .category-tab.active {
+  color: var(--accent);
+}
+
+.BookListAllPage .category-tab:hover {
+  color: var(--accent);
+  background: none;      
+  text-decoration: none; 
+}
+
+/* ── 요약 ── */
+.BookListAllPage .summary {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* ── 그리드 ── */
+.BookListAllPage .grid-all {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* ── 카드 ── */
+.BookListAllPage .card-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.BookListAllPage .card-img {
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+.BookListAllPage .card-title {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin: 0 0 4px;
+}
+.BookListAllPage .card-meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 2px 0;
+}
+
+/* ── 페이징 ── */
+.BookListAllPage .pagination-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+.BookListAllPage .pagination-all button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.BookListAllPage .pagination-all button:hover:not(:disabled) {
+  background: var(--accent);
+}
+.BookListAllPage .pagination-all button:disabled {
+  background: #ccc;
+  cursor: default;
+}
+.BookListAllPage .page-indicator {
+  font-size: 0.9rem;
+}

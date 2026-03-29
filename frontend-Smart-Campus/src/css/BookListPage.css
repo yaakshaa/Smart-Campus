@@ -1,0 +1,125 @@
+/* 컨테이너 & 레이아웃 */
+.booklist-container {
+  display: flex;
+}
+.booklist-main {
+  flex: 1;
+  padding: 20px;
+  padding-bottom:150px; /* 푸터 띄우기 */
+}
+
+/* 테이블 스타일 */
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+.book-table th,
+.book-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;       /* 모든 셀 가운데 정렬 */
+  vertical-align: middle;
+}
+
+/* 컬럼별 너비 */
+.col-image     { width: 100px; }  /* 이미지 셀 */
+.col-title     { width: 40%; }
+.col-author    { width: 20%; }
+.col-publisher { width: 20%; }
+.col-status    { width: 20%; }
+
+/* 이미지 전용 컬럼 헤더 숨기기 */
+.book-table th.col-image {
+  padding: 0;
+  border-bottom: 1px solid #ddd;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+/* 이미지 전용 셀 중앙 정렬 */
+.book-table td.col-image {
+  padding: 12px;
+}
+
+/* 책 표지 이미지 */
+.book-cover-small {
+  width: 90px;     /* 필요에 따라 100px 등으로 조정 */
+  height: 120px;
+  object-fit: cover;
+  margin: 0 auto;  /* 셀 가로 중앙에 배치 */
+}
+
+/* 제목 셀: 텍스트만 가운데 정렬 */
+.title-cell {
+  display: block;
+  text-align: center;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #002244;
+}
+
+/* 페이지네비게이션 */
+.pagination-bookList {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+.pagination-button-bookList {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.pagination-button-bookList.active {
+  background-color: #002244;
+}
+.pagination-button-bookList:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+.book-table .col-title a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.2s ease, font-weight 0.2s ease;
+}
+.book-table .col-title a:hover {
+  color: #002244;
+  font-weight: 700;
+}
+
+/* 검색 결과 없음 전용 레이아웃 */
+.booklist-main.no-results {
+  display: flex;
+  flex-direction: column;  /* 세로 정렬 */
+  align-items: center;     /* 가로 중앙 정렬 */
+  padding-top: 200px;      /* 헤더 아래 여백 */
+}
+
+/* 버튼 그룹 */
+.booklist-buttons {
+  display: flex;
+  gap: 40px;               /* 버튼 간격 */
+  margin-top: 50px;        
+}
+
+/* 검색 결과 타이틀을 왼쪽 정렬 */
+.booklist-main h2 {
+  text-align: left;
+  margin-left: 0;    /* 필요하다면 px 단위로 여백 조절 */
+  margin-bottom: 30px; /* 아래 여백도 약간 주면 깔끔합니다 */
+}

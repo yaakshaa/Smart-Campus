@@ -1,0 +1,143 @@
+/* 로딩 / “존재하지 않는 도서” */
+.BookDetailPage.detail-loading {
+  text-align: center;
+  margin: 100px 0;
+}
+
+/* 컨테이너 & 레이아웃 */
+.BookDetailPage.detail-container {
+  display: flex;
+}
+.BookDetailPage.detail-container .detail-main {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+}
+
+/* 상세 카드 */
+.BookDetailPage .detail-card {
+  display: flex;
+  gap: 40px;             /* 표지 ↔ 정보 사이 간격 */
+}
+
+/* 왼쪽 표지 */
+.BookDetailPage .detail-cover-wrap {
+  flex-shrink: 0;
+}
+.BookDetailPage .detail-cover {
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 오른쪽 정보 */
+.BookDetailPage .detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;             /* 정보 블록 간 vertical gap */
+}
+.BookDetailPage .detail-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+.BookDetailPage .detail-status {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 8px 0 16px;    /* 제목 ↔ 상태, 상태 ↔ 정보리스트 간격 */
+}
+.BookDetailPage .detail-status.available { color: #006400; }
+.BookDetailPage .detail-status.borrowed  { color: #c00; }
+
+/* 메타 정보 리스트 */
+.BookDetailPage .detail-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;      /* 정보리스트 ↔ 버튼 사이 여백 */
+}
+.BookDetailPage .detail-meta li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+.BookDetailPage .detail-meta li strong {
+  display: inline-block;
+  width: 80px;
+  font-weight: 600;
+}
+
+/* 대출/반납 버튼 */
+.BookDetailPage .detail-action-btn {
+  align-self: flex-start;    /* 버튼을 좌측 정렬 */
+  margin-left: 0;            /* 사이드 패딩에 맞춰 0으로 */
+  margin-bottom: 40px;       /* 버튼 아래 여백 유지 */
+}
+.BookDetailPage .detail-action-btn.btn-borrow {
+  background-color: #003366; color: #fff;
+}
+.BookDetailPage .detail-action-btn.btn-borrow:hover {
+  background-color: #002244;
+}
+.BookDetailPage .detail-action-btn.btn-return {
+  background-color: #c00; color: #fff;
+}
+.BookDetailPage .detail-action-btn.btn-return:hover {
+  background-color: #a00;
+}
+.BookDetailPage .detail-action-btn:disabled {
+  opacity: .6; cursor: not-allowed;
+}
+
+/* 관련 도서 섹션 */
+.BookDetailPage .detail-related-section {
+  padding: 40px 0;           /* 위/아래 여백 */
+  text-align: left;          /* 제목까지 좌측 정렬 */
+}
+.BookDetailPage .detail-related-section h2 {
+  margin: 0 0 16px 60px;
+  font-size: 1.25rem;
+  color: var(--primary);
+    text-align: left; 
+}
+
+/* 가로 스크롤 리스트 */
+.BookDetailPage .detail-related-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 0 60px 8px;
+  scroll-behavior: smooth;
+}
+
+/* 각 아이템 */
+.BookDetailPage .detail-related-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+.BookDetailPage .detail-related-item:hover {
+  transform: translateY(-4px);
+}
+.BookDetailPage .detail-related-item img {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+}
+.BookDetailPage .detail-related-item p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}

@@ -1,0 +1,64 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #003366;
+  border-bottom: 1px solid #ddd;
+  height: 64px;
+}
+
+/* ✅ 로고 스타일 */
+.header-left .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* ✅ 우측 로그인/로그아웃/마이페이지 컨테이너 */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+}
+
+/* ✅ 공통 버튼 스타일 (로그인/로그아웃/마이페이지/유저명) */
+.nav-link,
+.nav-button,
+.user-name {
+  all: unset; /* ✅ 브라우저 기본 스타일 초기화 */
+  font-size: 16px;
+  color: white !important;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: inline-flex; /* ✅ 수직 정렬 통일 */
+  align-items: center;
+  height: 100%;
+  line-height: 1;
+  white-space: nowrap;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ✅ hover/active/focus 시에도 깜빡임 없이 흰색 유지 */
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.nav-button:hover,
+.nav-button:focus,
+.nav-button:active,
+.user-name:hover,
+.user-name:focus,
+.user-name:active {
+  color: white !important;
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+

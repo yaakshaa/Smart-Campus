@@ -1,0 +1,144 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal button {
+  outline: none;
+  cursor: pointer;
+  border: 0;
+}
+.modal > section {
+  width: 90%;
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-show 0.3s;
+  overflow: hidden;
+}
+.modal > section > header {
+  position: relative;
+  padding: 16px 64px 16px 16px;
+  background-color: #f1f1f1;
+  font-weight: 700;
+}
+.modal > section > header button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+  color: #999;
+  background-color: transparent;
+}
+.modal > section > main {
+  padding: 16px;
+  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+}
+
+.modal .textarea{
+  width: 350px;
+}
+
+.modal > section > footer {
+  padding: 12px 16px;
+  text-align: right;
+  height: 30px;
+}
+.modal > section > footer button {
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #6c757d;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.modal.openModal {
+  display: flex;
+  align-items: center;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-bg-show 0.3s;
+}
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* 아래 여백 좀 넉넉히 */
+}
+
+table {
+  margin: 0 auto 30px auto;
+}
+
+
+.form-group label {
+  margin-bottom: 8px; /* 라벨과 입력창 간격 */
+  font-weight: 700; /* 굵게 */
+  font-size: 16px;
+  color: #222;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 400;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.content-group textarea {
+  min-height: 120px; /* 높이 더 확보 */
+}
+
+/* 보내기 버튼 위치 조정 */
+footer {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  padding-top: 10px;
+}
+
+.submit-btn {
+  background-color: #003366;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: 120px;
+}
+
+.submit-btn:hover {
+  background-color: #002244;
+}
