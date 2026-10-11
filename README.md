@@ -13,8 +13,8 @@ React, Spring Boot, Oracle DB를 기반으로 구현한 캠퍼스 웹서비스 �
 - **개발 기간**: 2025.06.27 ~ 2025.07.22
 - **참여 인원**: 11명
 - **주제**: 캠퍼스 웹서비스
-- **기술 스택**: React, Spring Boot, Oracle DB, Kakao Map API
-- **주요 기능**: 캠퍼스 지도, 건물 마커 표시, 경로 확인 기능
+- **기술 스택**: React, Spring Boot, JPA, Oracle DB, Kakao Map API
+- **주요 기능**: 건물 DB·REST API, 캠퍼스 지도, 건물 마커 표시, 경로 확인 기능
 
 Smart Campus는 캠퍼스 생활에 필요한 기능을 제공하는 웹서비스를 구현한 팀 프로젝트입니다.  
 학생들이 교내 주요 공간과 정보를 보다 직관적으로 확인하고,  
@@ -31,6 +31,11 @@ Smart Campus는 캠퍼스 생활에 필요한 기능을 제공하는 웹서비�
 
 프로젝트에서 아래 기능 구현과 개선에 참여했습니다.
 
+- **건물 데이터 DB·REST API 구현**
+  - Oracle DB에 건물 정보 테이블(`mapbuilding`) 구축
+  - Spring Boot·JPA 기반 조회·등록·수정·삭제 REST API 구현
+  - 지도 화면은 목록 조회(GET `/api/buildings`) 사용
+    
 - **지도 화면 구현**
   - 카카오맵 SDK를 활용한 캠퍼스 지도 렌더링
   - 지도 중심 좌표 설정 및 기본 화면 구성
@@ -62,6 +67,7 @@ Smart Campus는 캠퍼스 생활에 필요한 기능을 제공하는 웹서비�
 
 ### Backend
 - Spring Boot
+- Spring Data JPA
 - Java
 - Gradle
 
@@ -86,7 +92,7 @@ Smart Campus는 캠퍼스 생활에 필요한 기능을 제공하는 웹서비�
 
 - `backend-Smart-Campus`  
   Spring Boot 기반 백엔드 프로젝트입니다.  
-  건물 데이터 조회 및 관련 API를 담당합니다.
+  건물 데이터 조회·등록·수정·삭제 REST API를 제공합니다.
 
 ---
 
@@ -108,8 +114,25 @@ Smart Campus는 캠퍼스 생활에 필요한 기능을 제공하는 웹서비�
 출발지와 도착지를 선택하면 두 위치의 경로를 시각적으로 확인할 수 있도록 구성했습니다.  
 현재는 각 좌표를 기준으로 두 지점을 직선 형태로 연결해 표시하도록 구현했습니다.
 
----
+### 5) Backend API
+처리 흐름: React → Controller → Service → Repository → Oracle DB
 
+| Method | URL | 설명 |
+|---|---|---|
+| GET | /api/buildings | 건물 목록 조회 |
+| GET | /api/buildings/{id} | 건물 상세 조회 |
+| POST | /api/buildings | 건물 등록 |
+| PUT | /api/buildings/{id} | 건물 수정 |
+| DELETE | /api/buildings/{id} | 건물 삭제 |
+
+| 컬럼 | 타입 | 제약 |
+|---|---|---|
+| building_id | NUMBER(19) | PK, 자동 생성 |
+| building_name | VARCHAR2(255) | NOT NULL |
+| latitude | FLOAT | NOT NULL |
+| longitude | FLOAT | NOT NULL |
+| description | VARCHAR2(255) | |
+---
 ## 6. Trouble Shooting
 
 ### 길찾기 기능 구현 방식 조정
@@ -138,20 +161,22 @@ Smart Campus는 캠퍼스 생활에 필요한 기능을 제공하는 웹서비�
 
 ## 8. 주요 화면
 
-## Main Page
+### Main Page
 ![Main Page](images/main-page.png)
 
-## Campus Map
+### Campus Map
 ![Campus Map](images/campus-map.png)
 
-## Route Finding
+### Route Finding
 ![Route Finding](images/route-finding.png)
 
 ---
 
 ## 9. 배운 점
 
-이 프로젝트를 통해 지도 기반 서비스 화면 구성과 프론트엔드-백엔드 데이터 연동 과정을 경험할 수 있었습니다.  
+이 프로젝트를 통해 건물 DB 구축과 REST API 구현부터 지도 화면 연동까지, 
+데이터가 DB에서 화면에 표시되는 전체 흐름을 경험할 수 있었습니다.  
+
 또한 단순히 기능을 구현하는 것에 그치지 않고,  
 프로젝트 목적에 맞게 기능 방식과 UI를 조정하는 과정의 중요성을 배울 수 있었습니다.
 
