@@ -1,7 +1,7 @@
 import axios from "axios";
 import { KAKAO_REST_KEY } from './campusApi';
 
-
+// 출발·도착 좌표를 직선으로 연결하는 경로 생성
 export async function fetchDrivingRoute(origin, destination) {
     
     const pathCoords = [
