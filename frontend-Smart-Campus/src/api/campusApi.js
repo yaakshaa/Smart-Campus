@@ -21,7 +21,7 @@ axiosRetry(campusApi, {
     retries: 3,
     retryDelay: axiosRetry.exponentialDelay,
     retryCondition: error => axiosRetry.isNetworkOrIdempotentRequestError(error) ||
-        error.response.status >= 500,
+        error.response?.status >= 500,
 });
 
 // 요청 인터셉터: 로딩 스피너 표시, 공통 헤더 처리 등
@@ -59,8 +59,8 @@ export async function getCampus(path, config) {
         return res.data;
     } catch (err) {
         console.error("[API ERROR]", err);
-        return []; // 🔧 오류 발생 시 기본값으로 빈 배열 반환
-        throw err;
+        return []; // 오류 발생 시 기본값으로 빈 배열 반환
+        
     }
 }
 
@@ -104,7 +104,7 @@ export {
     campusApi,
     KAKAO_KEY,
     KAKAO_REST_KEY,
-    /* getCampus, */
+    
     postCampus,
     put,
     del,
