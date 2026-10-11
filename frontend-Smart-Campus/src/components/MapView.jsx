@@ -40,8 +40,7 @@ export default function MapView({
     useEffect(() => {
         let map;
 
-        /* const script = document.createElement('script'); */
-        /* script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&autoload=false`; */
+    
         
         const script = document.createElement('script');
         script.async = true;
@@ -72,8 +71,6 @@ export default function MapView({
                 // 건물 데이터 받아 마커 및 InfoWindow 생성
                 get('/api/buildings')
                     .then(buildings => {
-                        console.log('buildings 응답 개수:', buildings.length);
-                        console.log('buildings 응답 전체:', buildings);
 
                         buildings.forEach(building => {
                             const marker = new window.kakao.maps.Marker({
@@ -118,7 +115,7 @@ export default function MapView({
            
         };
     }, []);
-    console.log("MapView pathResult:", pathResult);
+    
     // pathCoords 변경 시 폴리라인 그리기
     useEffect(() => {
         const map = window.__kakaoMapInstance;
