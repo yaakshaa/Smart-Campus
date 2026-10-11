@@ -42,7 +42,7 @@ export default function MapView({
 
         /* const script = document.createElement('script'); */
         /* script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&autoload=false`; */
-        console.log("Loaded Kakao Key:", KAKAO_KEY);
+        
         const script = document.createElement('script');
         script.async = true;
         script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&autoload=false`;
